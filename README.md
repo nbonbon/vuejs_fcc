@@ -5,10 +5,10 @@ https://www.youtube.com/watch?v=Fa4cRMaTDUI&list=PLWKjhJtqVAbnadueQ-C5keMQQiQau_
 Part 2 @ 12
 
 # Tech Stack
-- NodeJS: ExpressJS
+- NodeJS: 
+  - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon
 - VueJS
-- Sequelize
-- sqlite
+- sqlite3
 - VSCode
   - Installed prettier extension for code formatting
 

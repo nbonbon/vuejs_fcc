@@ -6,11 +6,14 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"],
     languageOptions: {
-      ecmaVersion: 2022,
+      ecmaVersion: "latest",
       sourceType: "module",
       globals: {
         ...globals.node // Include Node.js globals like `process`
       }
+    },
+    rules: {
+      "no-unused-vars": "warn"
     },
     plugins: { js },
     extends: ["js/recommended"]
