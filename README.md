@@ -8,6 +8,7 @@ Part 2 @ 12
 - NodeJS: 
   - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon
 - VueJS
+  - vue-router, axios, vuetify
 - sqlite3
 - VSCode
   - Installed prettier extension for code formatting
@@ -20,3 +21,4 @@ Part 2 @ 12
 ## Part 2
 - Prettier keyboard shortcut: CTRL + SHIFT + |
 - NodeJS will look for a index.js file by default when importing a directory
+- Vuetify framework to build material design applications
