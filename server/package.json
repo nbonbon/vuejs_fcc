@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run lint && nodemon app.js",
+    "start": "npm run lint && nodemon src/app.js",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -15,7 +15,9 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "sequelize": "^6.37.6",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
