@@ -22,3 +22,4 @@ Part 2 @ 12
 - Prettier keyboard shortcut: CTRL + SHIFT + |
 - NodeJS will look for a index.js file by default when importing a directory
 - Vuetify framework to build material design applications
+- Vueitify required vueitfy instance to be passed into new Vue construction in main.ts and also required <v-app> element in the top level App.vue project. And then the styling worked.

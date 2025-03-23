@@ -2,7 +2,7 @@
   <v-layout column>
     <v-flex xs6 offset-xs3>
       <div class="white elevation-2">
-        <v-toolbar flat dense color="primary" dark>
+        <v-toolbar flat dense class="cyan" dark>
           <v-toolbar-title>Register</v-toolbar-title>
         </v-toolbar>
 
@@ -21,7 +21,8 @@
           <br>
           <div class="error" v-html="error"></div>
           <br>
-          <v-btn color="primary"
+          <v-btn
+            class="cyan"
             @click="register">
             Register
           </v-btn>
@@ -58,6 +59,6 @@ export default {
 
 <style scoped>
 .error {
-  color: red
+  color: red;
 }
 </style>
