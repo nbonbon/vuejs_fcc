@@ -8,7 +8,7 @@ Part 2 @ 12
 - NodeJS: 
   - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon, jsonwebtokens, bcryptjs
 - VueJS
-  - vue-router, axios, vuetify
+  - vue-router, axios, vuetify, vuex
 - sqlite3
 - VSCode
   - Installed prettier extension for code formatting
@@ -28,3 +28,5 @@ Part 2 @ 12
 ## Part 3
 - Newer versions of bcrypt don't require promisifying using bluebird
 - beforeSave is called before beforeCreate and beforeUpdate which was causing redundant and duplicated hashing of the password and failing to be able to login
+- Vuex = state management pattern / library for larger Vue applications that enabled components to talk to each other
+  - Pinia is a more modern / recommended approach now

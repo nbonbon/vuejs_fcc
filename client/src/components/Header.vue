@@ -12,10 +12,14 @@
     </v-toolbar-items> -->
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn dark text to="/login">
+      <v-btn dark text
+      to="/login"
+      v-if="!$store.state.isUserLoggedIn">
         Login
       </v-btn>
-      <v-btn dark text to="/register">
+      <v-btn dark text
+      to="/register"
+      v-if="!$store.state.isUserLoggedIn">
         Sign Up
       </v-btn>
     </v-toolbar-items>
