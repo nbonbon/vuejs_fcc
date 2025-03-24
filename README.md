@@ -6,7 +6,7 @@ Part 2 @ 12
 
 # Tech Stack
 - NodeJS: 
-  - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon
+  - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon, jsonwebtokens, bcrypt-nodejs
 - VueJS
   - vue-router, axios, vuetify
 - sqlite3
@@ -23,3 +23,4 @@ Part 2 @ 12
 - NodeJS will look for a index.js file by default when importing a directory
 - Vuetify framework to build material design applications
 - Vueitify required vueitfy instance to be passed into new Vue construction in main.ts and also required <v-app> element in the top level App.vue project. And then the styling worked.
+- v-btn text property made button appear within toolbar and not "elevated"
