@@ -6,7 +6,7 @@ Part 2 @ 12
 
 # Tech Stack
 - NodeJS: 
-  - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon, jsonwebtokens, bcrypt-nodejs
+  - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon, jsonwebtokens, bcryptjs
 - VueJS
   - vue-router, axios, vuetify
 - sqlite3
@@ -24,3 +24,7 @@ Part 2 @ 12
 - Vuetify framework to build material design applications
 - Vueitify required vueitfy instance to be passed into new Vue construction in main.ts and also required <v-app> element in the top level App.vue project. And then the styling worked.
 - v-btn text property made button appear within toolbar and not "elevated"
+
+## Part 3
+- Newer versions of bcrypt don't require promisifying using bluebird
+- beforeSave is called before beforeCreate and beforeUpdate which was causing redundant and duplicated hashing of the password and failing to be able to login
