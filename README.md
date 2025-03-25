@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=Fa4cRMaTDUI&list=PLWKjhJtqVAbnadueQ-C5keMQQiQau_
 https://github.com/codyseibert/tab-tracker/
 
 ## Left Off
-Part 2 @ 12
+Part 4 @ 37'
 
 # Tech Stack
 - NodeJS: 
