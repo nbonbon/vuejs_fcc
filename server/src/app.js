@@ -8,7 +8,11 @@ const config = require("./config/config");
 const app = express();
 app.use(morgan("combined"));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:8080', // Change this to the actual frontend origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: false
+}));
 
 require('./routes')(app)
 

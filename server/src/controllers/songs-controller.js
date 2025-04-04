@@ -14,6 +14,17 @@ module.exports = {
       })
     }
   },
+  async show (req, res) {
+    try {
+      const song = await Song.findByPk(req.params.songId)
+      res.send(song)
+    } catch(err) {
+      console.log(err)
+      return res.status(500).send({
+        error: 'An error has occured retrieving song.'
+      })
+    }
+  },
   async post (req, res) {
     try {
       const song = await Song.create(req.body)
