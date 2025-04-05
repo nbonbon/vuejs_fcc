@@ -1,6 +1,5 @@
 <template>
   <panel title="YouTube Video">
-    <h1>{{ youtubeId }}</h1>
     <youtube
       :video-id="youtubeId"
       :player-width="600"
