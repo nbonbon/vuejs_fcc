@@ -41,7 +41,14 @@
               </v-btn>
             </v-flex>
             <v-flex xs6>
-              <img class="album-image" :src="song.albumImageUrl"/>
+              <v-container class="image-container">
+                <v-img
+                  class="album-image"
+                  max-width="100%"
+                  max-height="100%"
+                  contain
+                  :src="song.albumImageUrl"></v-img>
+              </v-container>
             </v-flex>
           </v-layout>
         </div>
@@ -88,7 +95,12 @@ export default {
 }
 
 .album-image {
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
+  margin: q auto;
+}
+
+.image-container {
+  max-width: 300px;
+  overflow: hidden;
 }
 </style>

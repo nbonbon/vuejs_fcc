@@ -8,18 +8,9 @@
         <you-tube :youtubeId="song.youtubeId"/>
       </v-flex>
     </v-layout>
-    <v-layout>
+    <v-layout class="mt-2">
       <v-flex xs6>
-        <panel title="Tabs">
-        <v-textarea
-            class="tab-area"
-            label="Tab"
-            readonly
-            textarea
-            rows="32"
-            outlined
-            v-model="song.tab" />
-        </panel>
+        <tabs :song="song" />
       </v-flex>
       <v-flex xs6>
         <lyrics :lyrics="song.lyrics"/>
@@ -34,13 +25,15 @@ import SongsService from '@/services/SongsService'
 import SongMetadata from '@/components/ViewSong/SongMetadata.vue'
 import YouTube from '@/components/ViewSong/YouTube.vue'
 import Lyrics from '@/components/ViewSong/Lyrics.vue'
+import Tabs from '@/components/ViewSong/Tabs.vue'
 
 export default {
   components: {
     Panel,
     SongMetadata,
     YouTube,
-    Lyrics
+    Lyrics,
+    Tabs
   },
   data () {
     return {
