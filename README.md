@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=Fa4cRMaTDUI&list=PLWKjhJtqVAbnadueQ-C5keMQQiQau_
 https://github.com/codyseibert/tab-tracker/
 
 ## Left Off
-Part 5 @ 35'
+Part 6 @ 14'
 
 # Tech Stack
 - NodeJS: 
@@ -33,3 +33,18 @@ Part 5 @ 35'
 - beforeSave is called before beforeCreate and beforeUpdate which was causing redundant and duplicated hashing of the password and failing to be able to login
 - Vuex = state management pattern / library for larger Vue applications that enabled components to talk to each other
   - Pinia is a more modern / recommended approach now
+
+## Part 5
+- Accidentally saved full youtube URL under the youtubeId column in DB which was causing youtube video to not load
+
+## Part 6
+- Had to use $router.replace instead of $router.push as in the video. $router.push was redirecting whereas $router.replace does not.
+- The handler for loading the search param during page load did not work either (I may have forgot outter watch, because this worked in SongsPanel) did this instead:
+  ```
+  data () {
+      return {
+        search: this.$route.query.search || ''
+      }
+    }
+  ```
+- 

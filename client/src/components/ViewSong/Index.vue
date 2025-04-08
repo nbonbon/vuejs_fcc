@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
 import SongsService from '@/services/SongsService'
 import SongMetadata from '@/components/ViewSong/SongMetadata.vue'
 import YouTube from '@/components/ViewSong/YouTube.vue'
@@ -29,7 +28,6 @@ import Tabs from '@/components/ViewSong/Tabs.vue'
 
 export default {
   components: {
-    Panel,
     SongMetadata,
     YouTube,
     Lyrics,
