@@ -7,20 +7,28 @@
 </template>
 
 <script>
+import _ from 'lodash'
+
 export default {
   data () {
     return {
-      search: this.$route.query.search || ''
+      search: ''
     }
   },
   watch: {
-    search (value) {
+    search: _.debounce(async function (value) {
       if (this.search !== '') {
         this.$router.replace({
           query: {
             search: this.search
           }
         })
+      }
+    }, 700),
+    '$route.query.search': {
+      immediate: true,
+      handler (value) {
+        this.search = value
       }
     }
   }

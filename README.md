@@ -47,4 +47,4 @@ Part 6 @ 14'
       }
     }
   ```
-- 
+  - Sequalize no longer has %like and now has Op. So the NodeJS search code in songs-controller.index() is different.
