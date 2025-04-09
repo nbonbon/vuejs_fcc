@@ -4,9 +4,6 @@ https://www.youtube.com/watch?v=Fa4cRMaTDUI&list=PLWKjhJtqVAbnadueQ-C5keMQQiQau_
 # Github
 https://github.com/codyseibert/tab-tracker/
 
-## Left Off
-Part 6 @ 30'
-
 # Tech Stack
 - NodeJS: 
   - ExpressJS, morgan, body-parser, joy, sequalize, cors, nodemon, jsonwebtokens, bcryptjs
@@ -48,3 +45,14 @@ Part 6 @ 30'
     }
   ```
   - Sequalize no longer has %like and now has Op. So the NodeJS search code in songs-controller.index() is different.
+  - This syntax did not seem to work:
+  ```
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
+  },
+  ```
+
+## Left Off
+Part 6 @ 1hr 6'

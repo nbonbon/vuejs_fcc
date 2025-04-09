@@ -20,6 +20,20 @@
               songId: song.id
             }
           }">Edit</v-btn>
+
+        <v-btn
+          v-if="isUserLoggedIn && !bookmark"
+          class="cyan"
+          dark
+          @click="setAsBookmark"
+          >Set as Bookmark</v-btn>
+
+        <v-btn
+          v-if="isUserLoggedIn && bookmark"
+          class="cyan"
+          dark
+          @click="unsetAsBookmark"
+          >Unset as Bookmark</v-btn>
       </v-flex>
       <v-flex xs6>
         <img class="album-image" :src="song.albumImageUrl"/>
@@ -31,10 +45,48 @@
 </template>
 
 <script>
+import BookmarkService from '@/services/BookmarksService'
+
 export default {
   props: [
     'song'
-  ]
+  ],
+  data () {
+    return {
+      bookmark: null
+    }
+  },
+  computed: {
+    isUserLoggedIn () {
+      return this.$store.state.isUserLoggedIn
+    }
+  },
+  async mounted () {
+    if (this.isUserLoggedIn) {
+      this.bookmark = (await BookmarkService.index({
+        songId: this.song.id,
+        userId: this.$store.state.user.id
+      })).data
+      console.log(this.isBookmarked)
+    }
+  },
+  methods: {
+    async setAsBookmark () {
+      const bookmark = {
+        songId: this.song.id,
+        userId: this.$store.state.user.id
+      }
+      this.bookmark = (await BookmarkService.post(bookmark)).data
+    },
+    async unsetAsBookmark () {
+      try {
+        await BookmarkService.delete(this.bookmark.id)
+        this.bookmark = null
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
 }
 </script>
 
