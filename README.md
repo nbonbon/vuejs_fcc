@@ -55,4 +55,4 @@ https://github.com/codyseibert/tab-tracker/
   ```
 
 ## Left Off
-Part 6 @ 1hr 6'
+Part 7 @ 22'

@@ -63,20 +63,27 @@ export default {
   },
   async mounted () {
     if (this.isUserLoggedIn) {
-      this.bookmark = (await BookmarkService.index({
+      const bookmarks = (await BookmarkService.index({
         songId: this.song.id,
         userId: this.$store.state.user.id
       })).data
-      console.log(this.isBookmarked)
+
+      if (bookmarks.length) {
+        this.bookmark = bookmarks[0]
+      }
     }
   },
   methods: {
     async setAsBookmark () {
-      const bookmark = {
-        songId: this.song.id,
-        userId: this.$store.state.user.id
+      try {
+        const bookmark = {
+          songId: this.song.id,
+          userId: this.$store.state.user.id
+        }
+        this.bookmark = (await BookmarkService.post(bookmark)).data
+      } catch (err) {
+        console.log(err)
       }
-      this.bookmark = (await BookmarkService.post(bookmark)).data
     },
     async unsetAsBookmark () {
       try {
