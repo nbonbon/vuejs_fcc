@@ -64,8 +64,7 @@ export default {
   async mounted () {
     if (this.isUserLoggedIn) {
       const bookmarks = (await BookmarkService.index({
-        songId: this.song.id,
-        userId: this.$store.state.user.id
+        songId: this.song.id
       })).data
 
       if (bookmarks.length) {
@@ -77,8 +76,7 @@ export default {
     async setAsBookmark () {
       try {
         const bookmark = {
-          songId: this.song.id,
-          userId: this.$store.state.user.id
+          songId: this.song.id
         }
         this.bookmark = (await BookmarkService.post(bookmark)).data
       } catch (err) {

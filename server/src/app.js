@@ -14,6 +14,8 @@ app.use(cors({
   credentials: false
 }));
 
+require('./passport')
+
 require('./routes')(app)
 
 sequelize.sync({force: false}).then(() => {

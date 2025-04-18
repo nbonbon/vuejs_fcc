@@ -1,10 +1,13 @@
 <template>
   <v-layout>
-    <v-flex xs6>
+    <v-flex xs6 v-if="isUserLoggedIn">
       <songs-bookmarks />
       <recently-viewed-songs class="mt-2"></recently-viewed-songs>
     </v-flex>
-    <v-flex xs6>
+    <v-flex :class="{
+      xs6: isUserLoggedIn,
+      xs12: !isUserLoggedIn
+    }">
       <songs-search-panel></songs-search-panel>
       <songs-panel class="mt-2"></songs-panel>
     </v-flex>
@@ -17,6 +20,7 @@ import SongsSearchPanel from '@/components/Songs/SongsSearchPanel.vue'
 import SongsService from '@/services/SongsService'
 import SongsBookmarks from '@/components/Songs/SongsBookmarks.vue'
 import RecentlyViewedSongs from '@/components/Songs/RecentlyViewedSongs.vue'
+import { isUndefined } from 'lodash'
 
 export default {
   components: {
@@ -28,6 +32,11 @@ export default {
   data () {
     return {
       songs: null
+    }
+  },
+  computed: {
+    isUserLoggedIn () {
+      return this.$store.state.isUserLoggedIn
     }
   },
   async mounted () {
