@@ -2,6 +2,7 @@
   <v-layout>
     <v-flex xs6>
       <songs-bookmarks />
+      <recently-viewed-songs class="mt-2"></recently-viewed-songs>
     </v-flex>
     <v-flex xs6>
       <songs-search-panel></songs-search-panel>
@@ -15,12 +16,14 @@ import SongsPanel from '@/components/Songs/SongsPanel.vue'
 import SongsSearchPanel from '@/components/Songs/SongsSearchPanel.vue'
 import SongsService from '@/services/SongsService'
 import SongsBookmarks from '@/components/Songs/SongsBookmarks.vue'
+import RecentlyViewedSongs from '@/components/Songs/RecentlyViewedSongs.vue'
 
 export default {
   components: {
     SongsPanel,
     SongsSearchPanel,
-    SongsBookmarks
+    SongsBookmarks,
+    RecentlyViewedSongs
   },
   data () {
     return {

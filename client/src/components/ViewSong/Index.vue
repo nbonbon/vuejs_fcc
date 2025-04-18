@@ -25,6 +25,7 @@ import SongMetadata from '@/components/ViewSong/SongMetadata.vue'
 import YouTube from '@/components/ViewSong/YouTube.vue'
 import Lyrics from '@/components/ViewSong/Lyrics.vue'
 import Tabs from '@/components/ViewSong/Tabs.vue'
+import SongHistoryService from '@/services/SongHistoryService'
 
 export default {
   components: {
@@ -35,12 +36,27 @@ export default {
   },
   data () {
     return {
-      song: null
+      song: {}
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.state.user
+    },
+    isUserLoggedIn () {
+      return this.$store.state.isUserLoggedIn
     }
   },
   async mounted () {
     const songId = this.$store.state.route.params.songId
     this.song = (await SongsService.show(songId)).data
+
+    if (this.isUserLoggedIn) {
+      SongHistoryService.post({
+        songId: songId,
+        userId: this.user.id
+      })
+    }
   }
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
-  <panel title="Bookmarks">
+  <panel title="Recently Viewed Songs">
     <v-data-table
       :headers="headers"
       :options.sync="options"
-      :items="bookmarks">
+      :items="histories">
       <template slot="items" slot-scope="props">
         <td class="text-xs-right">
           {{ props.item.title }}
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import BookmarkService from '@/services/BookmarksService'
+import SongHistoryService from '@/services/SongHistoryService'
 
 export default {
   data () {
@@ -33,10 +33,10 @@ export default {
         }
       ],
       options: {
-        sortBy: ["createdAt"], // Sort column
-        sortDesc: [true] // Descending order
+        sortBy: ['createdAt'],
+        sortDesc: [true]
       },
-      bookmarks: []
+      histories: []
     }
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
   },
   async mounted () {
     if (this.isUserLoggedIn) {
-      this.bookmarks = (await BookmarkService.index({
+      this.histories = (await SongHistoryService.index({
         userId: this.$store.state.user.id
       })).data
     }
